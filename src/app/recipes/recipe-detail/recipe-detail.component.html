@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="http://placehold.it/" alt="placeholder" class="img-responsive">
+        <img src="{{recipe.imagePath}}" alt="placeholder" class="img-responsive" width="30%">
 
     </div>
 </div>
 <div class="row">
     <!--col-xs-12 means collumn spaning the whole width-->
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <h1>{{recipe.name}}</h1>
     </div>
 </div>
 <div class="row">
@@ -27,7 +27,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            Description
+            {{recipe.description}}
         </div>
     </div>
     <div class="row">
