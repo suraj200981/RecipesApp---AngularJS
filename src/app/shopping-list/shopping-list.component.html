@@ -1,7 +1,10 @@
 <div class="row">  
     <div class="col-xs-10">
-        <app-shopping-edit (ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
-        <hr>
+        <!-- edit shopping component -->
+        <app-shopping-edit></app-shopping-edit>
+        <hr style="border: 1px solid">
+
+        <!-- shopping list component loop -->
         <ul class="list-group">
             <a href="#" class="list-group-item"
             style="cursor: pointer;"
