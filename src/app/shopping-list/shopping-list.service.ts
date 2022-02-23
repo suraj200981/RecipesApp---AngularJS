@@ -21,5 +21,18 @@ export class ShoppingListService {
         this.ingredients.push(ingredient);
         this.newIngredientsAdded.emit(this.ingredients.slice());
     }
+
+
+    addIngredients(ingredients: Ingredient[]){
+        //for each ingredient in the array
+        //add it to the ingredients array
+        //emit the new ingredients array
+        //for(let ingredient of ingredients){
+        //  this.addIngredient(ingredient);
+        //}
+        this.ingredients.push(...ingredients);//ES6 spread operator feature to add multiple items to an array
+        this.newIngredientsAdded.emit(this.ingredients.slice());
+    }
+
  
 }

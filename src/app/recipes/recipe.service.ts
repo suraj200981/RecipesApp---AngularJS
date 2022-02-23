@@ -1,12 +1,20 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
 
-//managing recipes with recipes service
 
-export class RecipeService {
+
+@Injectable() // injecting shopping list service into recipe service
+export class RecipeService { //managing recipes with recipes service
     //this is the recipe that the user has clicked on in recipe item
     recipeSelected = new EventEmitter<Recipe>();
+
+
+
+    constructor(private shoppingListService: ShoppingListService) {
+        
+    }
 
     //you cannot directly access this array from the outside, unless you are using the getRecipes() method
     private recipes: Recipe[] =[
@@ -32,6 +40,11 @@ export class RecipeService {
     getRecipes(){
         return this.recipes.slice();
     }
+
+    addIngredientToShoppingList(ingredients: Ingredient[]){
+        this.shoppingListService.addIngredients(ingredients);
+    }
+
 
     
 }
